@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+}
+
+body > * {
+    background-color: papayawhip;
+    margin: auto;
+    max-width: 960px;
+    padding: 8px;
+}
+
+header > nav > ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+header > nav > ul > li {
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+main > * {
+    margin: 0;
+}
+
+main > * + * {
+    margin-top: 0.5em;
+}
+
+.contact-form {
+    max-width: 360px;
+}
+
+.contact-form * {
+    display: block;
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 10em;
+    resize: vertical;
+    width: 100%;
+}
