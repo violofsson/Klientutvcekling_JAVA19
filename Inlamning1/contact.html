@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Huvudsida</a></li>
+                <li><a href="index.html">Startsida</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
@@ -22,21 +22,42 @@
     <main>
         <h1>Kontakt</h1>
         <h2>Kontaktuppgifter</h2>
+        <p>Inte en chans att jag lägger upp mina riktiga kontaktuppgifter där vilken spammare som helst kan se dem.</p>
+
+        <p><address>
+            Gatuadress<br/>
+            Postnummer<br/>
+            Postort<br/>
+        </address></p>
+
         <h2>Hitta till Nackademin</h2>
         <h2>Kontakta mig direkt</h2>
+        <p><strong>Obs:</strong> Detta formulär fungerar inte. Detta är ett
+            medvetet val.</p>
         <form class="contact-form">
             <p>Alla fält är obligatoriska.</p>
             <p><label for="name">Namn:</label>
-                <input type="text" name="name" /></p>
+                <input type="text" name="name" required /></p>
             <p><label for="email">E-mailadress:</label>
-                <input type="email" name="email" /></p>
+                <input type="email" name="email" required /></p>
             <p><label for="message">Meddelande:</label>
-                <textarea name="message"></textarea></p>
+                <textarea name="message" required></textarea></p>
             <p><button type="submit">Skicka meddelande</button></p>
         </form>
     </main>
 
-    <footer></footer>
+    <footer>
+        <p>Allt originellt innehåll på denna sida är &copy; Victor Olofsson 2020.</p>
+
+        <p>Typsnitten
+            <a href="https://fonts.google.com/specimen/Fira+Sans">Fira Sans</a> och
+            <a href="https://fonts.google.com/specimen/Lora">Lora</a>
+            är licensierade under
+            <a href="https://scripts.sil.org/OFL_web"><cite>
+                    SIL <abbr title="Open Font License">OFL</abbr> version 1.1
+                </cite></a>.
+        </p>
+    </footer>
 </body>
 
 </html>

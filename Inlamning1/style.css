@@ -1,48 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:regular,bold,italic,bolditalic|Lora:regular,bold,italic,bolditalic');
+
+
+/* GRUNDLÄGGANDE LAYOUT */
+
 * {
     box-sizing: border-box;
+    font-family: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    color: #1c2833;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 body {
-    background-color: lightblue;
+    background-color: #ffecdb;
+    margin: auto;
+    max-width: 960px;
 }
 
 body > * {
-    background-color: papayawhip;
-    margin: auto;
-    max-width: 960px;
-    padding: 8px;
+    margin-top: 0.5rem;
 }
 
-header > nav > ul {
+header > nav * {
+    display: inline-block;
     list-style: none;
     padding-left: 0;
 }
 
-header > nav > ul > li {
-    display: inline-block;
-    margin-left: 4px;
-    margin-right: 4px;
+header * + * {
+    margin-left: 0.5em;
 }
 
-main > * {
-    margin: 0;
-}
-
-main > * + * {
+main * + *,
+footer * + * {
     margin-top: 0.5em;
 }
 
-.contact-form {
-    max-width: 360px;
+ul, ol, dd {
+    padding-left: 2.5em;
 }
+
+br, li, dt, dd, th, td, option {
+    margin-top: 0;
+}
+
+footer {
+    font-size: smaller;
+    text-align: center;
+}
+
+
+/* TYPOGRAFI */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+code, pre {
+    font-family: monospace;
+}
+
+
+/* BLOCKELEMENT */
+
+blockquote, figure, pre {
+    background-color: #add8e6;
+    display: block;
+    border: 0.125em solid;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5em;
+    text-align: center;
+}
+
+
+/* INTERAKTIVA ELEMENT */
+
+a {
+    color: #96281b;
+}
+
+button, input, textarea {
+    font-size: inherit;
+    border: 0.1em solid;
+    padding: 0 0.2em;
+}
+
+button:focus, input:focus, textarea:focus, a:focus {
+    outline: 0.125em solid;
+}
+
+/* Hover utan focus får en glesare ram för att markera att fokus är "viktigare" än pekaren */
+a:hover:not(:focus) {
+    outline: 0.125em dotted;
+}
+
+
+/* FORMULÄR */
 
 .contact-form * {
     display: block;
-    width: 100%;
+    width: 15rem;
+}
+
+/* Överskuggar den ordinarie marginalen och för ihop label och kontroll */
+.contact-form label + * {
+    margin-top: 0;
 }
 
 .contact-form textarea {
-    height: 10em;
-    resize: vertical;
-    width: 100%;
+    height: 10rem;
 }
