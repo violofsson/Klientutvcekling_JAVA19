@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:regular,bold,italic,bolditalic|Lora:regular,bold,italic,bolditalic');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|Lora:regular,bold,italic,bolditalic');
 
 
 /* GRUNDLÄGGANDE LAYOUT */
@@ -19,13 +19,22 @@
 }
 
 body {
-    background-color: #ffecdb;
-    margin: auto;
+    background-color: #efefef;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
     max-width: 960px;
 }
 
 body > * {
-    margin-top: 0.5rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    border-style: double;
+    border-width: 0.25rem;
+    margin: 0.5rem auto;
+    max-width: 80ch;
+    padding: 1em;
 }
 
 header > nav * {
@@ -43,12 +52,12 @@ footer * + * {
     margin-top: 0.5em;
 }
 
-ul, ol, dd {
-    padding-left: 2.5em;
-}
-
 br, li, dt, dd, th, td, option {
     margin-top: 0;
+}
+
+ul, ol, dd {
+    padding-left: 2.5em;
 }
 
 footer {
@@ -57,7 +66,7 @@ footer {
 }
 
 
-/* TYPOGRAFI */
+/* RUBRIKER */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fira Sans', sans-serif;
@@ -75,43 +84,81 @@ h3 {
     font-size: 1.25em;
 }
 
-code, pre {
+
+/* BLOCKELEMENT */
+
+blockquote, figure, iframe, pre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60ch;
+}
+
+blockquote, figure {
+    border: 0.125em double currentColor;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/*figure > figcaption {
+    border-top-width: 0.125em;
+    border-top-style: dotted;
+    padding-top: 0.5em;
+}*/
+
+iframe, pre {
+    background-color: #efefef;
+    border: 0.125em solid currentColor;
+    max-width: 100%;
+}
+
+pre {
     font-family: monospace;
 }
 
 
-/* BLOCKELEMENT */
+/* INLINE-ELEMENT */
 
-blockquote, figure, pre {
-    background-color: #add8e6;
-    display: block;
-    border: 0.125em solid;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.5em;
-    text-align: center;
+code {
+    background-color: #efefef;
+    font-family: monospace;
+    padding-left: 0.125em;
+    padding-right: 0.125em;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
 }
 
 
 /* INTERAKTIVA ELEMENT */
 
 a {
-    color: #96281b;
+    color: #b11030;
 }
 
-button, input, textarea {
-    font-size: inherit;
-    border: 0.1em solid;
-    padding: 0 0.2em;
-}
-
-button:focus, input:focus, textarea:focus, a:focus {
+a:focus {
     outline: 0.125em solid;
 }
 
 /* Hover utan focus får en glesare ram för att markera att fokus är "viktigare" än pekaren */
 a:hover:not(:focus) {
     outline: 0.125em dotted;
+}
+
+button, input, textarea {
+    background-color: #efefef;
+    border: currentColor solid 0.125em;
+    color: inherit;
+    font-size: inherit;
+    padding: 0 0.25em;
+}
+
+button:focus, input:focus, textarea:focus {
+    background-color: #ffffff;
+    outline: currentColor solid 0.125em;
 }
 
 
