@@ -46,11 +46,15 @@
         <form class="contact-form" method="POST" action="#">
             <p>Alla fält är obligatoriska.</p>
             <p><label for="name">Namn:</label>
-                <input type="text" name="name" required /></p>
+                <input type="text" name="name" id="name" required /></p>
             <p><label for="email">E-mailadress:</label>
-                <input type="email" name="email" required /></p>
+                <input type="email" name="email" id="email" required /></p>
             <p><label for="message">Meddelande:</label>
-                <textarea name="message" required></textarea></p>
+                <textarea name="message" id="message" required></textarea></p>
+            <p>
+                <input type="checkbox" name="robot" id="robot" required />
+                <label for="robot">Jag är inte en robot. Jag är 100% mänsklig med hud och allt.</label>
+            </p>
             <p><button type="submit">Skicka meddelande</button></p>
         </form>
     </main>
@@ -62,9 +66,12 @@
             <a href="https://fonts.google.com/specimen/Alegreya+Sans">Alegreya Sans</a>
             och <a href="https://fonts.google.com/specimen/Lora">Lora</a>
             är licensierade under
-            <a href="https://scripts.sil.org/OFL_web"><cite>
-                    SIL <abbr title="Open Font License">OFL</abbr> version 1.1
-                </cite></a>.
+            <a href="https://scripts.sil.org/OFL_web">
+                SIL <abbr title="Open Font License">OFL</abbr> version 1.1</a>.
+        </p>
+
+        <p>Utfyllnadsbilder tillhandahålls av
+            <a href="https://tafttest.com"><span lang="en">The Taft Test</span></a>.
         </p>
     </footer>
 </body>

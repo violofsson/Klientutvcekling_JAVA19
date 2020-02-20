@@ -12,7 +12,7 @@
    konsekvens över optimering. Undantagsregler bör dock vara få och precisa. */
 
 * {
-    box-sizing: border-box;
+    box-sizing: inherit;
     font-family: inherit;
     line-height: inherit;
     margin: 0;
@@ -20,6 +20,7 @@
 }
 
 :root {
+    box-sizing: border-box;
     color: #1c2833;
     font-family: 'Lora', serif;
     font-size: 1rem;
@@ -36,19 +37,23 @@ body {
 }
 
 /* Rem-skalning försäkrar att huvudbehållarna har jämna mått och "hör ihop".
-   Inline-element (och mer nästade block) brukar däremot se bättre ut
-   om deras mått anpassas till typstorleken (som i regel ändå är densamma
-   som i rotdokumentet).
-   Observera att bredden är baserad på ch och utfyllnaden på em, vilket gör
-   sidfoten mindre i båda avseenden. Detta är ett avsiktligt estetiskt val. */
+   Inline-element (och djupt nästade block) brukar däremot se bättre ut om deras
+   mått anpassas till typstorleken (när den skiljer från rotdokumentets).*/
+
+/* Observera att utfyllnaden är baserad på em, vilket gör den mindre i sidfoten.
+   Detta är ett medvetet estetiskt val. */
 body > * {
     background-color: #ffffff;
     border-radius: 0.5rem;
     border-style: double;
     border-width: 0.25rem;
     margin: 0.75rem auto; /* 0.5 ger för lite luft, 1 för mycket */
-    max-width: 80ch;
+    /*max-width: 80ch;*/
     padding: 1em;
+}
+
+header {
+    text-align: center;
 }
 
 header > nav * {
@@ -59,6 +64,14 @@ header > nav * {
 
 header * + * {
     margin-left: 0.5em;
+}
+
+/* En spaltbredd på 60-70 tecken är mer lättläst. Jag räknar med en
+   genomsnittlig teckenbredd på ungefär 2/3em. */
+main > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
 }
 
 main * + * {
@@ -108,29 +121,28 @@ h3 {
 
 /* BLOCKELEMENT */
 
-blockquote, figure, iframe, pre {
+blockquote, figure, form, iframe, pre {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%;
+    width: 100%;
+}
+
+blockquote, figure, form {
+    border-radius: 0.5rem;
+    border-style: double;
+    border-width: 0.25rem;
+    padding: 1em;
 }
 
 blockquote, figure {
-    border: 0.25em double currentColor;
-    border-radius: 0.5em;
-    max-width: 60ch;
-    padding: 1em;
     text-align: center;
 }
 
-/*figure > figcaption {
-    border-top: 0.125em dotted currentColor;
-    padding-top: 0.5em;
-}*/
-
 iframe, pre {
     background-color: #efefef;
-    border: 0.125em solid currentColor;
+    border-style: solid;
+    border-width: 0.125em;
 }
 
 pre {
@@ -164,54 +176,63 @@ a {
 }
 
 a:focus {
-    outline: currentColor solid 0.125em;
+    outline-style: solid;
+    outline-width: 0.125em;
 }
 
 /* Hover utan focus får en glesare ram för att markera att fokus är "viktigare"
    än pekaren */
 a:hover:not(:focus) {
-    outline: currentColor dotted 0.125em;
+    outline-style: dotted;
+    outline-width: 0.125em;
 }
 
 button, input, textarea {
-    background-color: #efefef;
-    border: currentColor solid 0.125em;
+    background-color: #ffffff;
+    border-color: currentColor;
+    border-style: solid;
+    border-width: 0.125em;
     color: inherit;
     font-size: inherit;
     padding: 0 0.25em;
 }
 
-button:focus, input:focus, textarea:focus {
-    background-color: #ffffff;
-    outline: currentColor solid 0.125em;
+button {
+    background-color: #efefef;
 }
 
-button:hover {
+button:focus, input:focus, textarea:focus {
+    /*background-color: #ffffff;*/
+    outline-style: solid;
+    outline-width: 0.125em;
+}
+
+button:disabled, input:disabled, textarea:disabled {
+    background-color: #efefef;
+    opacity: 0.25;
+}
+
+button:hover:not(:disabled) {
     background-color: #ffffff;
     cursor: pointer;
 }
 
 
 /* FORMULÄR */
+/* Klasselektorerna kan lätt "översättas" till elementselektorer, men min tanke
+   är att definiera varje formulär för sig. */
 
-/* Med välplanerad refaktorisering kan klasselektorerna lätt "översättas" till
-   till elementselektorer som i övriga stilmallen. Min logik här är att basera
-   layouten på det specifika formuläret och skriva stilarna därefter.
-   Apropå ingenting visar studier att sådana här "staplade" formulär är
-   lättast att läsa och förstå. */
-.contact-form {
-    border: 0.25em double currentColor;
-    border-radius: 0.5em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 42ch;
-    padding: 1em;
-}
-
-.contact-form * {
+.contact-form button,
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form textarea {
     display: block;
     width: 100%;
+}
+
+.contact-form input[type=checkbox] + label {
+    margin-top: 0;
+    margin-left: 0.25em;
 }
 
 /* Överskuggar den ordinarie marginalen och för ihop label och kontroll */
@@ -221,4 +242,5 @@ button:hover {
 
 .contact-form textarea {
     height: 15em;
+    overflow: auto;
 }
