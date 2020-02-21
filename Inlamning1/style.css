@@ -6,7 +6,7 @@
    detaljer och 1/8 för linjer.
    Dessa stilar gör flitigt bruk av jokrar och syskonselektorer, knep jag lärde
    mig på ett tidigare jobb. En del kan vara överflödiga; konsekvens har gått
-   före optimering. Mitt mål är breda regler med koncisa undantag. */
+   före optimering. */
 
 * {
     box-sizing: inherit;
@@ -24,24 +24,42 @@
     line-height: 1.5;
 }
 
+::selection {
+    background-color: #b11030;
+    color: #ffffff;
+}
+
 body {
-    background-color: #efefef;
+    background-color: #d3d3d3;
     margin-left: auto;
     margin-right: auto;
+    padding: 1rem;
     max-width: 960px;
-    padding: 0.5rem;
 }
 
 /* Rem-skalning försäkrar att huvudbehållarna har jämna mått och passar ihop.
-   Inline-element och nästade block brukar dock se bättre ut om deras mått
-   anpassas till ev ändrad typstorlek.*/
+   Inline-element och nästade block ser dock bättre ut om deras mått anpassas
+   till ev ändrad typstorlek.
+   En spaltbredd på 60-70 tecken är mest lättläst. Jag räknar med en
+   genomsnittlig teckenbredd på 1/2 till 2/3 em plus 3em utfyllnad.
+   Teckenbredd kan mätas mer exakt med ch-enheten, men den utgår från
+   typstorleken, vilket orsakar problem med sidfotens mindre text. */
 body > * {
     background-color: #ffffff;
     border: 0.25rem double currentColor;
     border-radius: 0.5rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
+    max-width: 42rem;
+    padding: 1.5em;
+}
+
+@media print {
+    body, body > * {
+        border: 0;
+        max-width: 100%;
+        padding: 0;
+    }
 }
 
 body > * + * {
@@ -62,22 +80,18 @@ header * + * {
     margin-left: 0.5em;
 }
 
-/* En spaltbredd på 60-70 tecken är mer lättläst. Jag räknar med en
-   genomsnittlig teckenbredd på 1/2 till 2/3 em.
-   Teckenbredd kan mätas mer exakt med ch-enheten, men den beräknas
-   utifrån typstorleken, vilket orsakar problem med rubriker.  */
 main > * {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 100%;
 }
 
 main * + * {
-    margin-top: 1em;
+    margin-top: 1.5em;
 }
 
 footer {
-    font-size: smaller;
+    font-size: 0.75em;
     text-align: center;
 }
 
@@ -116,6 +130,12 @@ h3 {
     font-size: 1.25em;
 }
 
+.intro-title {
+    color: #b11030;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 
 /* BLOCKELEMENT */
 
@@ -123,33 +143,34 @@ blockquote, figure, form, iframe {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: max-content;
 }
 
 blockquote, figure, form {
-    border: 0.25rem double currentColor;
     border-radius: 0.5rem;
     padding: 1em;
-    width: 100%;
 }
 
 blockquote, figure {
+    border: 0.25rem double currentColor;
     text-align: center;
 }
 
-iframe {
-    background-color: #efefef;
+form {
     border: 0.125em solid currentColor;
-    max-width: 100%;
+}
+
+iframe {
+    background-color: #d3d3d3;
+    border: 0.125em solid currentColor;
 }
 
 
 /* INLINE-ELEMENT */
 
 code {
-    background-color: #efefef;
+    background-color: #ececec;
     font-family: monospace;
-    padding-left: 0.125em;
-    padding-right: 0.125em;
 }
 
 figcaption {
@@ -174,7 +195,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 /* En glesare ram markerar att fokus är "viktigare" än pekaren */
-a:hover:not(:focus) {
+a:hover:not(:focus), button:hover:not(:focus):not(:disabled) {
     outline-style: dotted;
     outline-width: 0.125em;
 }
@@ -187,7 +208,7 @@ button, input, textarea {
 }
 
 button {
-    background-color: #efefef;
+    background-color: #ececec;
 }
 
 input, textarea {
@@ -195,13 +216,8 @@ input, textarea {
 }
 
 button:disabled, input:disabled, textarea:disabled {
-    background-color: #efefef;
+    background-color: #d3d3d3;
     opacity: 0.25;
-}
-
-button:hover:not(:disabled) {
-    background-color: #ffffff;
-    cursor: pointer;
 }
 
 
