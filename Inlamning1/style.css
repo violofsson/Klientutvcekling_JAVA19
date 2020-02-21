@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|Lora:regular,bold,italic,bolditalic');
 
-
 /* GRUNDLÄGGANDE LAYOUT */
-/* Grundregeln är att alla explicita mått ska vara baserade på multipler
-   av 1/8 av teckenstorleken, ju mindre nämnare desto bättre. I regel bör
-   1/8 vara reserverat för linjer och 1/4 för lite större detaljer. 1/2 ska
-   anses som den generiska enheten. */
-
-/* Dessa stilar gör flitigt bruk av jokrar och syskonselektorer, ett knep jag
-   lärde mig på ett tidigare jobb. En del kan vara överflödiga; jag har valt
-   konsekvens över optimering. Undantagsregler bör dock vara få och precisa. */
+/* Grundregeln är att basera explicita mått på tvåpotenser av typstorleken.
+   I regel ska 1/2 och 1 användas mest flitigt. 1/4 bör vara reserverat för
+   detaljer och 1/8 för linjer.
+   Dessa stilar gör flitigt bruk av jokrar och syskonselektorer, knep jag lärde
+   mig på ett tidigare jobb. En del kan vara överflödiga; konsekvens har gått
+   före optimering. Mitt mål är breda regler med koncisa undantag. */
 
 * {
     box-sizing: inherit;
@@ -29,27 +26,26 @@
 
 body {
     background-color: #efefef;
-    margin-bottom: 0.5rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0.5rem;
     max-width: 960px;
+    padding: 0.5rem;
 }
 
-/* Rem-skalning försäkrar att huvudbehållarna har jämna mått och "hör ihop".
-   Inline-element (och djupt nästade block) brukar däremot se bättre ut om deras
-   mått anpassas till typstorleken (när den skiljer från rotdokumentets).*/
-
-/* Observera att utfyllnaden är baserad på em, vilket gör den mindre i sidfoten.
-   Detta är ett medvetet estetiskt val. */
+/* Rem-skalning försäkrar att huvudbehållarna har jämna mått och passar ihop.
+   Inline-element och nästade block brukar dock se bättre ut om deras mått
+   anpassas till ev ändrad typstorlek.*/
 body > * {
     background-color: #ffffff;
+    border: 0.25rem double currentColor;
     border-radius: 0.5rem;
-    border-style: double;
-    border-width: 0.25rem;
-    margin: 0.75rem auto; /* 0.5 ger för lite luft, 1 för mycket */
-    /*max-width: 80ch;*/
-    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+body > * + * {
+    margin-top: 1rem;
 }
 
 header {
@@ -67,34 +63,36 @@ header * + * {
 }
 
 /* En spaltbredd på 60-70 tecken är mer lättläst. Jag räknar med en
-   genomsnittlig teckenbredd på ungefär 2/3em. */
+   genomsnittlig teckenbredd på 1/2 till 2/3 em.
+   Teckenbredd kan mätas mer exakt med ch-enheten, men den beräknas
+   utifrån typstorleken, vilket orsakar problem med rubriker.  */
 main > * {
     margin-left: auto;
     margin-right: auto;
-    max-width: 40rem;
+    max-width: 36rem;
 }
 
 main * + * {
     margin-top: 1em;
 }
 
+footer {
+    font-size: smaller;
+    text-align: center;
+}
+
 footer * + * {
     margin-top: 0.5em;
 }
 
+/* Nollställer marginalen för element som inte ska separeras */
 br, li, dt, dd, th, td, option {
     margin-top: 0;
 }
 
-/* Vänsterutfyllnaden för listor togs bort i jokerselektorn. Därför
-   återställer vi den med ett värde motsvarande Firefox default. */
+/* Återställer listors vänsterutfyllnad, som togs bort i jokerselektorn */
 ul, ol, dd {
     padding-left: 2.5em;
-}
-
-footer {
-    font-size: smaller;
-    text-align: center;
 }
 
 
@@ -121,32 +119,27 @@ h3 {
 
 /* BLOCKELEMENT */
 
-blockquote, figure, form, iframe, pre {
+blockquote, figure, form, iframe {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
 }
 
 blockquote, figure, form {
+    border: 0.25rem double currentColor;
     border-radius: 0.5rem;
-    border-style: double;
-    border-width: 0.25rem;
     padding: 1em;
+    width: 100%;
 }
 
 blockquote, figure {
     text-align: center;
 }
 
-iframe, pre {
+iframe {
     background-color: #efefef;
-    border-style: solid;
-    border-width: 0.125em;
-}
-
-pre {
-    font-family: monospace;
+    border: 0.125em solid currentColor;
+    max-width: 100%;
 }
 
 
@@ -163,7 +156,7 @@ figcaption {
     font-style: italic;
 }
 
-img, video {
+img {
     height: auto;
     max-width: 100%;
 }
@@ -175,23 +168,19 @@ a {
     color: #b11030;
 }
 
-a:focus {
+a:focus, button:focus, input:focus, textarea:focus {
     outline-style: solid;
     outline-width: 0.125em;
 }
 
-/* Hover utan focus får en glesare ram för att markera att fokus är "viktigare"
-   än pekaren */
+/* En glesare ram markerar att fokus är "viktigare" än pekaren */
 a:hover:not(:focus) {
     outline-style: dotted;
     outline-width: 0.125em;
 }
 
 button, input, textarea {
-    background-color: #ffffff;
-    border-color: currentColor;
-    border-style: solid;
-    border-width: 0.125em;
+    border: 0.125em solid currentColor;
     color: inherit;
     font-size: inherit;
     padding: 0 0.25em;
@@ -201,10 +190,8 @@ button {
     background-color: #efefef;
 }
 
-button:focus, input:focus, textarea:focus {
-    /*background-color: #ffffff;*/
-    outline-style: solid;
-    outline-width: 0.125em;
+input, textarea {
+    background-color: #ffffff;
 }
 
 button:disabled, input:disabled, textarea:disabled {
