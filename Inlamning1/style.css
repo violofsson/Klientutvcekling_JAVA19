@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|Lora:regular,bold,italic,bolditalic");
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|Alegreya:regular,bold,italic,bolditalic");
 
 /* GRUNDLÄGGANDE LAYOUT */
 /* Grundregeln är att basera explicita mått på tvåpotenser av typstorleken.
@@ -18,7 +18,7 @@
 html {
   box-sizing: border-box;
   color: #2f3640;
-  font-family: "Lora", serif;
+  font-family: "Alegreya", serif;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -39,7 +39,7 @@ body {
    Inline-element och nästade block brukar dock se bättre ut om deras mått
    anpassas till ev ändrad typstorlek.
    En spaltbredd på 60-70 tecken är mest lättläst. Jag räknar med en
-   genomsnittlig teckenbredd på 1/2 till 2/3 em plus 3em utfyllnad.
+   genomsnittlig teckenbredd på 1/2 till 2/3 em plus 2-3em utfyllnad.
    Teckenbredd kan mätas mer exakt med ch-enheten, men den utgår från
    typstorleken, vilket orsakar problem med sidfotens mindre text. */
 body > * {
@@ -52,6 +52,7 @@ body > * {
   padding: 1.5em;
 }
 
+/* Bättre utnyttjat utrymme vid utskrift */
 @media print {
   body,
   body > * {
@@ -194,6 +195,8 @@ figcaption {
 img {
   display: block;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 100%;
 }
 
