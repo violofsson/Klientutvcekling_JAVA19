@@ -1,10 +1,13 @@
-let pseudoTable = "";
+let table = '<table>';
 
 for (let row = 1; row <= 10; row++) {
+  table += '<tr>';
   for (let col = 1; col <= 10; col++) {
-    pseudoTable += Number(row) * Number(col) + " ";
+    table += '<td>' + (Number(row) * Number(col)) + '</td>';
   }
-  pseudoTable += "\n";
+  table += '</tr>';
 }
 
-console.log(pseudoTable);
+table += '</table>';
+
+console.log(table);
