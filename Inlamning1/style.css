@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|Lora:regular,bold,italic,bolditalic');
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|Lora:regular,bold,italic,bolditalic");
 
 /* GRUNDLÄGGANDE LAYOUT */
 /* Grundregeln är att basera explicita mått på tvåpotenser av typstorleken.
@@ -9,241 +9,271 @@
    före optimering. */
 
 * {
-    box-sizing: inherit;
-    font-family: inherit;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
+  box-sizing: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-:root {
-    box-sizing: border-box;
-    color: #1c2833;
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    line-height: 1.5;
+html {
+  box-sizing: border-box;
+  color: #2f3640;
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 ::selection {
-    background-color: #b11030;
-    color: #ffffff;
+  background-color: #c23616;
+  color: #ffffff;
 }
 
 body {
-    background-color: #d3d3d3;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1rem;
-    max-width: 960px;
+  background-color: #dcdde1;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
 }
 
 /* Rem-skalning försäkrar att huvudbehållarna har jämna mått och passar ihop.
-   Inline-element och nästade block ser dock bättre ut om deras mått anpassas
-   till ev ändrad typstorlek.
+   Inline-element och nästade block brukar dock se bättre ut om deras mått
+   anpassas till ev ändrad typstorlek.
    En spaltbredd på 60-70 tecken är mest lättläst. Jag räknar med en
    genomsnittlig teckenbredd på 1/2 till 2/3 em plus 3em utfyllnad.
    Teckenbredd kan mätas mer exakt med ch-enheten, men den utgår från
    typstorleken, vilket orsakar problem med sidfotens mindre text. */
 body > * {
-    background-color: #ffffff;
-    border: 0.25rem double currentColor;
-    border-radius: 0.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 42rem;
-    padding: 1.5em;
+  background-color: #ffffff;
+  border: 0.25rem double currentColor;
+  border-radius: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  padding: 1.5em;
 }
 
 @media print {
-    body, body > * {
-        border: 0;
-        max-width: 100%;
-        padding: 0;
-    }
+  body,
+  body > * {
+    border: none;
+    max-width: 100%;
+    padding: 0;
+  }
 }
 
 body > * + * {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-header {
-    text-align: center;
+body > header {
+  text-align: center;
 }
 
-header > nav * {
-    display: inline-block;
-    list-style: none;
-    padding-left: 0;
+body > header nav * {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0;
 }
 
-header * + * {
-    margin-left: 0.5em;
+body > header * + * {
+  margin-left: 0.5em;
 }
 
 main > * {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
 }
 
 main * + * {
-    margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 
-footer {
-    font-size: 0.75em;
-    text-align: center;
+body > footer {
+  font-size: 0.75em;
+  text-align: center;
 }
 
-footer * + * {
-    margin-top: 0.5em;
+body > footer * + * {
+  margin-top: 0.5em;
 }
 
 /* Nollställer marginalen för element som inte ska separeras */
-br, li, dt, dd, th, td, option {
-    margin-top: 0;
+br,
+li,
+dt,
+dd,
+th,
+td,
+option {
+  margin-top: 0;
 }
 
 /* Återställer listors vänsterutfyllnad, som togs bort i jokerselektorn */
-ul, ol, dd {
-    padding-left: 2.5em;
+ul,
+ol,
+dd {
+  padding-left: 2.5em;
 }
-
 
 /* RUBRIKER */
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Alegreya Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Alegreya Sans", sans-serif;
+  line-height: 1.25;
 }
 
 h1 {
-    font-size: 2em;
-    line-height: 1.25;
+  font-size: 2em;
 }
 
 h2 {
-    font-size: 1.5em;
-    line-height: 1.25;
+  font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 .intro-title {
-    color: #b11030;
-    text-align: center;
-    text-transform: uppercase;
+  color: #192a56;
+  text-align: center;
+  text-transform: uppercase;
 }
-
 
 /* BLOCKELEMENT */
 
-blockquote, figure, form, iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: max-content;
+blockquote,
+figure,
+form,
+iframe {
+  border-radius: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
 }
 
-blockquote, figure, form {
-    border-radius: 0.5rem;
-    padding: 1em;
-}
-
-blockquote, figure {
-    border: 0.25rem double currentColor;
-    text-align: center;
-}
-
+blockquote,
+figure,
 form {
-    border: 0.125em solid currentColor;
+  padding: 1.5em;
+}
+
+blockquote,
+figure {
+  border: 0.25rem double currentColor;
+  text-align: center;
+}
+
+form,
+iframe {
+  border: 0.125rem solid currentColor;
 }
 
 iframe {
-    background-color: #d3d3d3;
-    border: 0.125em solid currentColor;
+  background-color: #f5f6fa;
 }
-
 
 /* INLINE-ELEMENT */
 
 code {
-    background-color: #ececec;
-    font-family: monospace;
+  background-color: #dcdde1;
+  font-family: monospace;
 }
 
 figcaption {
-    font-style: italic;
+  font-style: italic;
 }
 
 img {
-    height: auto;
-    max-width: 100%;
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
-
 
 /* INTERAKTIVA ELEMENT */
 
 a {
-    color: #b11030;
+  color: #c23616;
 }
 
-a:focus, button:focus, input:focus, textarea:focus {
-    outline-style: solid;
-    outline-width: 0.125em;
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  /* Tar bort tomrummen mellan randhörn och markering i fokuserade fält */
+  border-radius: 0;
+  outline-style: solid;
+  outline-width: 0.125rem;
 }
 
 /* En glesare ram markerar att fokus är "viktigare" än pekaren */
-a:hover:not(:focus), button:hover:not(:focus):not(:disabled) {
-    outline-style: dotted;
-    outline-width: 0.125em;
+a:hover:not(:focus) {
+  outline-style: dotted;
+  outline-width: 0.125rem;
 }
 
-button, input, textarea {
-    border: 0.125em solid currentColor;
-    color: inherit;
-    font-size: inherit;
-    padding: 0 0.25em;
+button,
+input,
+textarea {
+  border: 0.125rem solid currentColor;
+  border-radius: 0.25rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0 0.25em;
 }
 
 button {
-    background-color: #ececec;
+  background-color: #dcdde1;
 }
 
-input, textarea {
-    background-color: #ffffff;
+button:not(:disabled) {
+  cursor: pointer;
 }
 
-button:disabled, input:disabled, textarea:disabled {
-    background-color: #d3d3d3;
-    opacity: 0.25;
+input,
+textarea {
+  background-color: #f5f6fa;
 }
 
+button:disabled,
+input:disabled,
+textarea:disabled {
+  background-color: #dcdde1;
+  opacity: 0.25;
+}
 
 /* FORMULÄR */
 /* Klasselektorerna kan lätt "översättas" till elementselektorer, men min tanke
-   är att definiera varje formulär för sig. */
+   är att definiera varje formulärlayout för sig. */
 
 .contact-form button,
-.contact-form input[type=text],
-.contact-form input[type=email],
+.contact-form input[type="text"],
+.contact-form input[type="email"],
 .contact-form textarea {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
-.contact-form input[type=checkbox] + label {
-    margin-top: 0;
-    margin-left: 0.25em;
+.contact-form input[type="checkbox"] + label {
+  margin-top: 0;
+  margin-left: 0.25em;
 }
 
-/* Överskuggar den ordinarie marginalen och för ihop label och kontroll */
-.contact-form label + * {
-    margin-top: 0;
+/* Överskuggar den ordinarie marginalen mellan intilliggande element */
+.contact-form label + input,
+.contact-form label + textarea {
+  margin-top: 0;
 }
 
 .contact-form textarea {
-    height: 15em;
-    overflow: auto;
+  height: 15em;
+  overflow: auto;
 }
