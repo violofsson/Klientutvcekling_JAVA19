@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|Alegreya:regular,bold,italic,bolditalic");
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,bold,italic,bolditalic|PT+Serif:regular,bold,italic,bolditalic");
 
 /* GRUNDLÄGGANDE LAYOUT */
 /* Grundregeln är att basera explicita mått på tvåpotenser av typstorleken.
    I regel ska 1/2 och 1 användas mest flitigt. 1/4 bör vara reserverat för
    detaljer och 1/8 för linjer.
    Dessa stilar gör flitigt bruk av jokrar och syskonselektorer, knep jag lärde
-   mig på ett tidigare jobb. En del kan vara överflödiga; konsekvens har gått
-   före optimering. */
+   mig på ett tidigare jobb. En del kan vara överflödiga; för det mesta
+   har konsekvens gått före optimering. */
 
 * {
   box-sizing: inherit;
-  line-height: inherit;
   margin: 0;
   padding: 0;
 }
@@ -18,7 +17,7 @@
 html {
   box-sizing: border-box;
   color: #2f3640;
-  font-family: "Alegreya", serif;
+  font-family: "PT Serif", serif;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -87,7 +86,7 @@ main > * {
 }
 
 main * + * {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
 body > footer {
@@ -163,7 +162,7 @@ iframe {
 blockquote,
 figure,
 form {
-  padding: 1.5em;
+  padding: 1em;
 }
 
 blockquote,
@@ -186,10 +185,6 @@ iframe {
 code {
   background-color: #dcdde1;
   font-family: monospace;
-}
-
-figcaption {
-  font-style: italic;
 }
 
 img {
@@ -228,16 +223,18 @@ textarea {
   border: 0.125rem solid currentColor;
   border-radius: 0.25rem;
   color: inherit;
-  font-family: inherit;
+  font-family: inherit; /* Snyggare text */
   font-size: inherit;
+  line-height: inherit;
   padding: 0 0.25em;
 }
 
 button {
-  background-color: #dcdde1;
+  background-color: #f5f6fa;
 }
 
-button:not(:disabled) {
+button:hover:not(:disabled) {
+  background-color: #dcdde1;
   cursor: pointer;
 }
 
