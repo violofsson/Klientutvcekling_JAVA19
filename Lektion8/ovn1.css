@@ -1,0 +1,7 @@
+ul#shopping-list {
+    list-style: none;
+}
+
+input[type="checkbox"]:checked + span.item {
+    text-decoration: line-through;
+}

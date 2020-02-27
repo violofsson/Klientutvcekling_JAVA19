@@ -4,9 +4,9 @@ $(document).ready(function() {
     let entered = $("#entered-item").val();
     if (entered != "") {
       $("#shopping-list").append(
-        '<li><input type="checkbox" />' +
+        '<li><input type="checkbox" /> <span class="item">' +
           entered +
-          ' <button class="remove-item">Ta bort</button></li>'
+          '</span> <button class="remove-item">Ta bort</button></li>'
       );
       $("button.remove-item").click(function(e) {
         $(this)
