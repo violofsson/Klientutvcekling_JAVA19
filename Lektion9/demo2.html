@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON-demo</title>
+</head>
+
+<body>
+  <button id="load-button">Hämta data från XML</button>
+  <h1 id="name"></h1>
+  <p id="output"></p>
+
+  <script>
+    let loadButton = document.getElementById("load-button");
+    loadButton.addEventListener("click", loadJSON);
+
+    function loadJSON() {
+      console.log("Laddar JSON...");
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "demo.json", true);
+      xhr.send();
+
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(this);
+          let json = JSON.parse(this.responseText);
+          console.log(json);
+
+          document.getElementById("name").innerHTML = json.name;
+          document.getElementById("output").innerHTML = JSON.stringify(json);
+        }
+      };
+    }
+  </script>
+</body>
+
+</html>

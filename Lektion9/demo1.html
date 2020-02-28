@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XML-demo</title>
+</head>
+
+<body>
+  <button id="load-button">Hämta data från XML</button>
+  <ul id="demo"></ul>
+
+  <script>
+    let loadButton = document.getElementById("load-button");
+    loadButton.addEventListener("click", loadXML);
+
+    function loadXML() {
+      console.log("Laddar XML...");
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "demo.xml", true);
+      xhr.send();
+
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let xml = xhr.responseXML;
+          let artists = xml.getElementsByTagName("ARTIST");
+          let list = "";
+          for (let a of artists) {
+            list += "<li>" + a.textContent + "</li>";
+          }
+          document.getElementById("demo").innerHTML = list;
+        }
+      };
+    }
+  </script>
+</body>
+
+</html>

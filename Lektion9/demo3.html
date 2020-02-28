@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX via jQuery</title>
+</head>
+
+<body>
+  <button id="load-button">AJAX via jQuery</button>
+  <h1 id="name"></h1>
+  <p id="output"></p>
+
+  <script src="../jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#load-button").click(function (e) {
+        $.getJSON("demo.json", function (response, status, xhr) {
+          $("#name").html(response.name);
+          $("#output").html(response.email + "<br/>" + response.phone);
+        });
+      })
+    });
+  </script>
+</body>
+
+</html>

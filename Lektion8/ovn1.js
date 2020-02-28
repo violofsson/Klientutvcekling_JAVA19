@@ -1,18 +1,21 @@
 $(document).ready(function() {
   $("#item-input").submit(function(e) {
     e.preventDefault();
-    let entered = $("#entered-item").val();
-    if (entered != "") {
+    let entered = $("#entered-item");
+
+    if (entered.val() != "") {
       $("#shopping-list").append(
         '<li><input type="checkbox" /> <span class="item">' +
-          entered +
+          entered.val() +
           '</span> <button class="remove-item">Ta bort</button></li>'
       );
-      $("button.remove-item").click(function(e) {
-        $(this)
-          .parent()
-          .remove();
-      });
+      entered.val("");
     }
+  });
+
+  $("#shopping-list").on("click", "button.remove-item", function(e) {
+    $(this)
+      .parent()
+      .remove();
   });
 });
