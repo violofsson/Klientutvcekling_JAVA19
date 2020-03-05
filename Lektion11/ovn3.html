@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AngularJS-demo</title>
+    <link href="../entireframework.min.css" rel="stylesheet"/>
+</head>
+
+<body class="container" ng-app="ovn3">
+
+<div ng-controller="nameCtrl">
+    <p><label for="filter" class="addon">Filter</label><input type="text" id="filter" ng-model="currentFilter"/></p>
+    <ul>
+        <li ng-repeat="n in names | filter : currentFilter">{{n}}</li>
+    </ul>
+</div>
+
+<footer ng-include="'footer.html'"></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="ovn3.js"></script>
+</body>
+
+</html>

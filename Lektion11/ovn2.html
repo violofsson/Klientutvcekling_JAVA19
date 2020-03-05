@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AngularJS-demo</title>
+    <link href="../entireframework.min.css" rel="stylesheet"/>
+</head>
+
+<body class="container" ng-app="ovn2">
+<h1>Modul och container</h1>
+<table class="table" ng-controller="carCtrl">
+    <thead>
+    <tr>
+        <td>Märke</td>
+        <td>Årsmodell</td>
+        <td>Färg</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in cars">
+        <td>{{c.brand}}</td>
+        <td>{{c.year}}</td>
+        <td>{{c.colour}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<footer ng-include="'footer.html'"></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="ovn2.js"></script>
+</body>
+
+</html>

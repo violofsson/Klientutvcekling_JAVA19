@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AngularJS-demo</title>
+    <link href="../entireframework.min.css" rel="stylesheet"/>
+</head>
+
+<body class="container" ng-app>
+<h1>AngularJS-demo</h1>
+<h2>Namn</h2>
+<fieldset>
+    <label for="first-name">Förnamn</label>
+    <input type="text" id="first-name" ng-model="firstName"/><br/>
+    <label for="last-name">Efternamn</label>
+    <input type="text" id="last-name" ng-model="lastName"/>
+</fieldset>
+
+<p>Hej, {{ firstName + " " + lastName }}!</p>
+
+<h2>Produkter</h2>
+<table class="table" ng-model="price1=10;price2=15" ng-init="qty1=0;qty2=0">
+    <thead>
+    <tr>
+        <td>Produkt</td>
+        <td>Pris</td>
+        <td>Antal</td>
+        <td>Summa</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>Produkt 1</td>
+        <td>{{ price1 }} kr</td>
+        <td><input type="number" min="0" ng-model="qty1"/></td>
+        <td>{{ price1 * qty1 }}</td>
+    </tr>
+    <tr>
+        <td>Produkt 2</td>
+        <td>{{ price2 }} kr</td>
+        <td><input type="number" min="0" ng-model="qty2"/></td>
+        <td>{{ price2 * qty2 }}</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Totalsumma: {{ (price1 * qty1) + (price2 * qty2) }}</p>
+
+<h2>Veckodagar</h2>
+<ol ng-init="days=['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag']">
+    <li ng-repeat="day in days">{{ day }}</li>
+</ol>
+
+<footer ng-include="'footer.html'"></footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</body>
+
+</html>
