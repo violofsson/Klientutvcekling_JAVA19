@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "brand": "Apple",
+    "model": "iPhone 8",
+    "memory": "64GB",
+    "color": "Space Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 5990,
+    "desc": "iPhone 8 kommer i en vacker glaskonstruktion med rundade kanter, är utrustad med ett avancerat A11 Bionic chip, 4,7” Retina HD-skärm. Den har även en vatten- och dammsäker konstruktion och 12 Mpx kamera för perfekta bilder i även svag belysning.",
+    "img": "img/img-appip8.jfif"
+  },
+  {
+    "id": 2,
+    "brand": "Apple",
+    "model": "iPhone XS",
+    "memory": "64GB",
+    "color": "Space Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 7990,
+    "desc": "Välkommen till en värld i häpnadsväckande färger och detalj. iPhone Xs smartphone har mjukt rundade kanter, edge-to-edge- skärm, kraftfullare A12 Bionic chip, högre batterikapacitet och vattentålig design.",
+    "img": "img/img-appipXS.jfif"
+  },
+  {
+    "id": 3,
+    "brand": "Apple",
+    "model": "iPhone 11",
+    "memory": "64GB",
+    "color": "Space Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 8790,
+    "desc": "Öppna ögonen och upplev världens skönhet från ett nytt perspektiv med iPhone 11 och dess skärm på 6.1 tum. Telefonen kommer med ett snabbt chip, avancerad teknik, smidig drift och innovativa funktioner.",
+    "img": "img/img-appip11.jfif"
+  },
+  {
+    "id": 4,
+    "brand": "Apple",
+    "model": "iPhone 11 PRO",
+    "memory": "64GB",
+    "color": "Space Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 12990,
+    "desc": "Fånga världen runt dig i foton med levande detaljrikedom. IPhone 11 Pro är en kraftfull enhet som är redo att ta otroliga foton och videor med sin 12 Mpx trippel-bakkamera som du kan se på den fantastiska Super Retina XDR-pekskärmen.",
+    "img": "img/img-appip11pro.jfif"
+  },
+  {
+    "id": 5,
+    "brand": "Samsung",
+    "model": "S20 4G",
+    "memory": "128GB",
+    "color": "Cosmic Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 9990,
+    "desc": "Samsung Galaxy S20 smartphone är en fullfjädrad multimediaenhet. Den har en 6,2-tums dynamisk AMOLED-pekskärm med imponerande Quad HD+-upplösning och smidig 120Hz uppdateringsfrekvens.",
+    "img": "img/img-sams20p.png"
+  },
+  {
+    "id": 6,
+    "brand": "Samsung",
+    "model": "S20 5G",
+    "memory": "128GB",
+    "color": "Cosmic Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 10990,
+    "desc": "Samsung Galaxy S20 smartphone är en fullfjädrad multimediaenhet. Den har en 6,2-tums dynamisk AMOLED-pekskärm med imponerande Quad HD+-upplösning och smidig 120Hz uppdateringsfrekvens",
+    "img": "img/img-sams20p.png"
+  },
+  {
+    "id": 7,
+    "brand": "Samsung",
+    "model": "S20 Plus 5G",
+    "memory": "128GB",
+    "color": "Cosmic Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 11990,
+    "desc": "Samsung Galaxy S20 Plus smartphone kombinerar fantastiska multimediafunktioner och kraftfull prestanda med snillrik design och IP68-certifiering.",
+    "img": "img/img-sams20p.png"
+  },
+  {
+    "id": 8,
+    "brand": "Samsung",
+    "model": "S20 Ultra 5G",
+    "memory": "128GB",
+    "color": "Cosmic Grey",
+    "quantity": 0,
+    "stock": 5,
+    "price": 14990,
+    "desc": "Samsung Galaxy S20 Ultra har en välvd 6,9-tums dynamisk AMOLED-pekskärm med fantastiska färger och 120 HZ uppdateringsfrekvens, samt en kraftfull fyrdubbel kamera på baksidan med upp till 100x zoom",
+    "img": "img/img-sams20u.jpg"
+  },
+  {
+    "id": 9,
+    "brand": "Samsung",
+    "model": "Galaxy Note 10",
+    "memory": "128GB",
+    "color": "Aura Glow",
+    "quantity": 0,
+    "stock": 5,
+    "price": 10749,
+    "desc": "Samsung Galaxy Note 10 smartphone ger dig en enorm 6,3-tums Super AMOLED pekskärm, en kraftfull trippelkamera och 256 GB lagringsutrymme. Med S Pen kan du enkelt skissa eller anteckna.",
+    "img": "img/img-samnote10.jpg"
+  },
+  {
+    "id": 10,
+    "brand": "Huawei",
+    "model": "P30 Pro",
+    "memory": "128GB",
+    "color": "Aura Glow",
+    "quantity": 0,
+    "stock": 5,
+    "price": 7990,
+    "desc": "Huawei P30 Pro smartphone är med sin Leica quad-kamera utformad för att hjälpa dig att fånga alla små detaljer. 8-kärnig Kirin 980-processor och 6 GB RAM innebär kraftfull prestanda och fingeravtrycksläsare på skärmen ger snabb och säker åtkomst.",
+    "img": "img/img-huaweip30p.jpg"
+  }
+]
